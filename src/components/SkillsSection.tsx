@@ -1,6 +1,9 @@
 const SkillsSection = () => {
-  const technicalSkills = ["React", "HTML5", "JavaScript", "CSS3"];
-  const softSkills = ["Problem Solving", "Teamwork", "Adaptability"];
+  const technicalSkills = [
+    "React", "JavaScript", "HTML5", "CSS3", "MongoDB", 
+    "Node.js", "Express", "JWT", "Git", "GitHub", "Postman", "Tailwind CSS"
+  ];
+  const softSkills = ["Problem Solving", "Teamwork", "Adaptability", "Communication"];
 
   return (
     <section id="skills" className="py-24 relative">

@@ -6,58 +6,58 @@
 
 @layer base {
   :root {
-    --background: 222 47% 6%;
+    --background: 230 25% 5%;
     --foreground: 210 40% 98%;
 
-    --card: 222 47% 8%;
+    --card: 230 25% 8%;
     --card-foreground: 210 40% 98%;
 
-    --popover: 222 47% 8%;
+    --popover: 230 25% 8%;
     --popover-foreground: 210 40% 98%;
 
-    --primary: 190 95% 50%;
-    --primary-foreground: 222 47% 6%;
+    --primary: 165 80% 50%;
+    --primary-foreground: 230 25% 5%;
 
-    --secondary: 222 47% 12%;
+    --secondary: 230 25% 12%;
     --secondary-foreground: 210 40% 98%;
 
-    --muted: 222 30% 15%;
-    --muted-foreground: 215 20% 65%;
+    --muted: 230 20% 15%;
+    --muted-foreground: 215 20% 60%;
 
-    --accent: 262 83% 58%;
+    --accent: 280 85% 65%;
     --accent-foreground: 210 40% 98%;
 
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 210 40% 98%;
 
-    --border: 222 30% 18%;
-    --input: 222 30% 18%;
-    --ring: 190 95% 50%;
+    --border: 230 20% 15%;
+    --input: 230 20% 15%;
+    --ring: 165 80% 50%;
 
     --radius: 0.75rem;
 
     /* Custom gradient colors */
-    --gradient-start: 190 95% 50%;
-    --gradient-end: 262 83% 58%;
+    --gradient-start: 165 80% 50%;
+    --gradient-end: 280 85% 65%;
     
     /* Skill badge colors */
-    --skill-tech: 190 95% 50%;
-    --skill-soft: 142 76% 36%;
+    --skill-tech: 165 80% 50%;
+    --skill-soft: 280 85% 65%;
     
     /* Contact icons */
     --github: 0 0% 100%;
-    --linkedin: 201 100% 35%;
+    --linkedin: 201 100% 45%;
     --email: 354 70% 54%;
-    --phone: 142 76% 36%;
+    --phone: 142 76% 50%;
 
-    --sidebar-background: 222 47% 6%;
+    --sidebar-background: 230 25% 5%;
     --sidebar-foreground: 210 40% 98%;
-    --sidebar-primary: 190 95% 50%;
-    --sidebar-primary-foreground: 222 47% 6%;
-    --sidebar-accent: 222 47% 12%;
+    --sidebar-primary: 165 80% 50%;
+    --sidebar-primary-foreground: 230 25% 5%;
+    --sidebar-accent: 230 25% 12%;
     --sidebar-accent-foreground: 210 40% 98%;
-    --sidebar-border: 222 30% 18%;
-    --sidebar-ring: 190 95% 50%;
+    --sidebar-border: 230 20% 15%;
+    --sidebar-ring: 165 80% 50%;
   }
 }
 
@@ -82,7 +82,7 @@
 
 @layer utilities {
   .gradient-text {
-    @apply bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent;
+    @apply bg-gradient-to-r from-primary via-emerald-400 to-accent bg-clip-text text-transparent;
   }
 
   .gradient-border {
@@ -100,15 +100,20 @@
   }
 
   .glass {
-    @apply bg-card/50 backdrop-blur-xl border border-border/50;
+    @apply bg-card/60 backdrop-blur-xl border border-border/50;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
   }
 
   .glow {
-    box-shadow: 0 0 40px -10px hsl(var(--primary) / 0.5);
+    box-shadow: 
+      0 0 20px -5px hsl(var(--primary) / 0.4),
+      0 0 60px -15px hsl(var(--primary) / 0.3);
   }
 
   .glow-accent {
-    box-shadow: 0 0 40px -10px hsl(var(--accent) / 0.5);
+    box-shadow: 
+      0 0 20px -5px hsl(var(--accent) / 0.4),
+      0 0 60px -15px hsl(var(--accent) / 0.3);
   }
 
   .animate-float {
@@ -126,12 +131,26 @@
 
   .bg-grid {
     background-image: 
-      linear-gradient(to right, hsl(var(--border) / 0.3) 1px, transparent 1px),
-      linear-gradient(to bottom, hsl(var(--border) / 0.3) 1px, transparent 1px);
+      linear-gradient(to right, hsl(var(--border) / 0.2) 1px, transparent 1px),
+      linear-gradient(to bottom, hsl(var(--border) / 0.2) 1px, transparent 1px);
     background-size: 60px 60px;
   }
 
   .bg-radial-gradient {
-    background: radial-gradient(ellipse at center, hsl(var(--primary) / 0.15) 0%, transparent 70%);
+    background: radial-gradient(ellipse at center, hsl(var(--primary) / 0.12) 0%, transparent 70%);
+  }
+
+  .bg-mesh {
+    background: 
+      radial-gradient(at 40% 20%, hsl(var(--primary) / 0.15) 0px, transparent 50%),
+      radial-gradient(at 80% 80%, hsl(var(--accent) / 0.15) 0px, transparent 50%),
+      radial-gradient(at 10% 90%, hsl(var(--primary) / 0.1) 0px, transparent 50%);
+  }
+
+  .text-gradient {
+    background: linear-gradient(135deg, hsl(var(--primary)) 0%, hsl(var(--accent)) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
   }
 }
