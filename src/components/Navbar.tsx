@@ -39,13 +39,13 @@ const Navbar = () => {
     <nav
       className={`fixed top-0 w-full z-50 transition-all duration-300 ${
         isScrolled
-          ? "glass shadow-lg shadow-black/20"
+          ? "glass shadow-lg shadow-black/10"
           : "bg-transparent"
       }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between h-16 items-center">
-          <a href="#home" className="font-display text-xl font-bold gradient-text">
+          <a href="#home" className="font-display text-lg font-bold gradient-text">
             Shivam Shrivastava
           </a>
 
@@ -55,11 +55,11 @@ const Navbar = () => {
             className="md:hidden text-muted-foreground hover:text-foreground transition-colors p-2"
             aria-label="Toggle menu"
           >
-            {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
+            {isMenuOpen ? <X size={22} /> : <Menu size={22} />}
           </button>
 
           {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center gap-8">
+          <div className="hidden md:flex items-center gap-7">
             {navLinks.map((link) => (
               <a
                 key={link.href}
@@ -73,7 +73,7 @@ const Navbar = () => {
               onClick={handleResumeClick}
               className="flex items-center gap-2 px-4 py-2 rounded-lg bg-gradient-to-r from-primary to-accent text-primary-foreground font-medium text-sm hover:opacity-90 transition-opacity"
             >
-              <FileDown size={18} />
+              <FileDown size={16} />
               Resume
             </button>
           </div>
@@ -86,13 +86,13 @@ const Navbar = () => {
           isMenuOpen ? "max-h-80" : "max-h-0"
         }`}
       >
-        <div className="px-4 py-4 space-y-2 glass border-t border-border/50">
+        <div className="px-4 py-4 space-y-1 glass border-t border-border/50">
           {navLinks.map((link) => (
             <a
               key={link.href}
               href={link.href}
               onClick={() => setIsMenuOpen(false)}
-              className="block px-4 py-3 text-muted-foreground hover:text-foreground hover:bg-secondary/50 rounded-lg transition-colors"
+              className="block px-4 py-3 text-muted-foreground hover:text-foreground hover:bg-secondary/40 rounded-lg transition-colors text-sm"
             >
               {link.label}
             </a>
@@ -102,9 +102,9 @@ const Navbar = () => {
               handleResumeClick(e);
               setIsMenuOpen(false);
             }}
-            className="flex items-center gap-2 w-full px-4 py-3 rounded-lg bg-gradient-to-r from-primary to-accent text-primary-foreground font-medium"
+            className="flex items-center gap-2 w-full px-4 py-3 rounded-lg bg-gradient-to-r from-primary to-accent text-primary-foreground font-medium text-sm mt-2"
           >
-            <FileDown size={18} />
+            <FileDown size={16} />
             Resume
           </button>
         </div>
