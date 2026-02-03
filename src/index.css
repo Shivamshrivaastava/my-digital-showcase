@@ -6,62 +6,62 @@
 
 @layer base {
   :root {
-    /* Refined slate-blue dark theme - softer on eyes */
-    --background: 220 20% 10%;
-    --foreground: 210 20% 95%;
+    /* Modern dark theme with rich indigo background */
+    --background: 222 47% 11%;
+    --foreground: 210 40% 98%;
 
-    --card: 220 20% 13%;
-    --card-foreground: 210 20% 95%;
+    --card: 222 47% 14%;
+    --card-foreground: 210 40% 98%;
 
-    --popover: 220 20% 13%;
-    --popover-foreground: 210 20% 95%;
+    --popover: 222 47% 14%;
+    --popover-foreground: 210 40% 98%;
 
-    /* Vibrant teal primary */
-    --primary: 172 66% 50%;
-    --primary-foreground: 220 20% 10%;
+    /* Vibrant electric blue primary */
+    --primary: 217 91% 60%;
+    --primary-foreground: 222 47% 11%;
 
-    --secondary: 220 18% 18%;
-    --secondary-foreground: 210 20% 95%;
+    --secondary: 217 30% 20%;
+    --secondary-foreground: 210 40% 98%;
 
-    --muted: 220 15% 22%;
-    --muted-foreground: 215 15% 55%;
+    --muted: 217 20% 25%;
+    --muted-foreground: 215 20% 65%;
 
-    /* Soft violet accent */
-    --accent: 258 65% 60%;
-    --accent-foreground: 210 20% 95%;
+    /* Modern purple accent */
+    --accent: 270 91% 65%;
+    --accent-foreground: 222 47% 11%;
 
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 20% 95%;
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 210 40% 98%;
 
-    --border: 220 15% 20%;
-    --input: 220 15% 20%;
-    --ring: 172 66% 50%;
+    --border: 217 30% 18%;
+    --input: 217 30% 18%;
+    --ring: 217 91% 60%;
 
-    --radius: 0.875rem;
+    --radius: 0.75rem;
 
     /* Custom gradient colors */
-    --gradient-start: 172 66% 50%;
-    --gradient-mid: 200 80% 60%;
-    --gradient-end: 258 65% 60%;
-    
+    --gradient-start: 217 91% 60%;
+    --gradient-mid: 240 91% 65%;
+    --gradient-end: 270 91% 65%;
+
     /* Skill badge colors */
-    --skill-tech: 172 66% 50%;
-    --skill-soft: 258 65% 60%;
-    
+    --skill-tech: 217 91% 60%;
+    --skill-soft: 270 91% 65%;
+
     /* Contact icons */
     --github: 0 0% 100%;
-    --linkedin: 201 100% 45%;
-    --email: 354 70% 54%;
-    --phone: 142 76% 50%;
+    --linkedin: 201 100% 55%;
+    --email: 354 70% 60%;
+    --phone: 142 76% 55%;
 
-    --sidebar-background: 220 20% 10%;
-    --sidebar-foreground: 210 20% 95%;
-    --sidebar-primary: 172 66% 50%;
-    --sidebar-primary-foreground: 220 20% 10%;
-    --sidebar-accent: 220 20% 18%;
-    --sidebar-accent-foreground: 210 20% 95%;
-    --sidebar-border: 220 15% 20%;
-    --sidebar-ring: 172 66% 50%;
+    --sidebar-background: 222 47% 11%;
+    --sidebar-foreground: 210 40% 98%;
+    --sidebar-primary: 217 91% 60%;
+    --sidebar-primary-foreground: 222 47% 11%;
+    --sidebar-accent: 217 30% 20%;
+    --sidebar-accent-foreground: 210 40% 98%;
+    --sidebar-border: 217 30% 18%;
+    --sidebar-ring: 217 91% 60%;
   }
 }
 
@@ -86,7 +86,7 @@
 
 @layer utilities {
   .gradient-text {
-    @apply bg-gradient-to-r from-primary via-sky-400 to-accent bg-clip-text text-transparent;
+    @apply bg-gradient-to-r from-primary via-blue-400 to-accent bg-clip-text text-transparent;
   }
 
   .gradient-border {
