@@ -39,39 +39,39 @@ const Navbar = () => {
     <nav
       className={`fixed top-0 w-full z-50 transition-all duration-300 ${
         isScrolled
-          ? "glass shadow-lg shadow-black/10"
+          ? "glass shadow-lg shadow-black/20"
           : "bg-transparent"
       }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between h-16 items-center">
-          <a href="#home" className="font-display text-lg font-bold gradient-text">
+        <div className="flex justify-between h-14 sm:h-16 items-center">
+          <a href="#home" className="font-display text-base sm:text-lg font-bold gradient-text">
             Shivam Shrivastava
           </a>
 
           {/* Mobile menu button */}
           <button
             onClick={() => setIsMenuOpen(!isMenuOpen)}
-            className="md:hidden text-muted-foreground hover:text-foreground transition-colors p-2"
+            className="md:hidden text-muted-foreground hover:text-foreground transition-colors p-1.5 sm:p-2"
             aria-label="Toggle menu"
           >
-            {isMenuOpen ? <X size={22} /> : <Menu size={22} />}
+            {isMenuOpen ? <X size={20} className="sm:w-[22px] sm:h-[22px]" /> : <Menu size={20} className="sm:w-[22px] sm:h-[22px]" />}
           </button>
 
           {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center gap-7">
+          <div className="hidden md:flex items-center gap-6 lg:gap-8">
             {navLinks.map((link) => (
               <a
                 key={link.href}
                 href={link.href}
-                className="text-muted-foreground hover:text-foreground transition-colors text-sm font-medium"
+                className="text-muted-foreground hover:text-foreground transition-colors text-sm font-medium relative after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-gradient-to-r after:from-primary after:to-accent hover:after:w-full after:transition-all after:duration-300"
               >
                 {link.label}
               </a>
             ))}
             <button
               onClick={handleResumeClick}
-              className="flex items-center gap-2 px-4 py-2 rounded-lg bg-gradient-to-r from-primary to-accent text-primary-foreground font-medium text-sm hover:opacity-90 transition-opacity"
+              className="flex items-center gap-2 px-4 py-2 rounded-lg bg-gradient-to-r from-primary to-accent text-primary-foreground font-semibold text-sm hover:opacity-90 hover:scale-105 transition-all glow"
             >
               <FileDown size={16} />
               Resume
@@ -86,13 +86,13 @@ const Navbar = () => {
           isMenuOpen ? "max-h-80" : "max-h-0"
         }`}
       >
-        <div className="px-4 py-4 space-y-1 glass border-t border-border/50">
+        <div className="px-4 py-3 sm:py-4 space-y-1 glass border-t border-border/50">
           {navLinks.map((link) => (
             <a
               key={link.href}
               href={link.href}
               onClick={() => setIsMenuOpen(false)}
-              className="block px-4 py-3 text-muted-foreground hover:text-foreground hover:bg-secondary/40 rounded-lg transition-colors text-sm"
+              className="block px-3 sm:px-4 py-2.5 sm:py-3 text-muted-foreground hover:text-foreground hover:bg-secondary/40 rounded-lg transition-colors text-sm"
             >
               {link.label}
             </a>
@@ -102,7 +102,7 @@ const Navbar = () => {
               handleResumeClick(e);
               setIsMenuOpen(false);
             }}
-            className="flex items-center gap-2 w-full px-4 py-3 rounded-lg bg-gradient-to-r from-primary to-accent text-primary-foreground font-medium text-sm mt-2"
+            className="flex items-center gap-2 w-full px-3 sm:px-4 py-2.5 sm:py-3 rounded-lg bg-gradient-to-r from-primary to-accent text-primary-foreground font-semibold text-sm mt-2"
           >
             <FileDown size={16} />
             Resume

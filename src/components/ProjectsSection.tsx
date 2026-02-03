@@ -65,35 +65,35 @@ const projects: Project[] = [
 const ProjectCard = ({ project, index }: { project: Project; index: number }) => {
   return (
     <div
-      className="group glass rounded-2xl overflow-hidden transition-all duration-500 hover:-translate-y-1 hover:shadow-2xl hover:shadow-primary/5 hover:border-primary/30"
+      className="group glass rounded-xl lg:rounded-2xl overflow-hidden transition-all duration-500 hover:-translate-y-1 hover:shadow-2xl hover:shadow-primary/10 hover:border-primary/40"
       style={{ animationDelay: `${index * 0.1}s` }}
     >
       {/* Image Container */}
-      <div className="relative h-48 overflow-hidden">
+      <div className="relative h-40 sm:h-48 overflow-hidden">
         <img
           src={project.image}
           alt={project.title}
-          className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+          className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
         />
-        <div className="absolute inset-0 bg-gradient-to-t from-card via-card/60 to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-t from-card via-card/70 to-transparent" />
       </div>
 
       {/* Content */}
-      <div className="p-6 space-y-4">
-        <h3 className="text-lg font-display font-semibold text-foreground group-hover:text-primary transition-colors">
+      <div className="p-4 sm:p-5 lg:p-6 space-y-3 sm:space-y-4">
+        <h3 className="text-base sm:text-lg font-display font-semibold text-foreground group-hover:text-primary transition-colors">
           {project.title}
         </h3>
-        
-        <p className="text-muted-foreground text-sm leading-relaxed line-clamp-3">
+
+        <p className="text-muted-foreground text-xs sm:text-sm leading-relaxed line-clamp-3">
           {project.description}
         </p>
 
         {/* Tech Stack */}
-        <div className="flex flex-wrap gap-2 pt-1">
+        <div className="flex flex-wrap gap-1.5 sm:gap-2 pt-1">
           {project.tags.map((tag) => (
             <span
               key={tag}
-              className="px-2.5 py-1 text-xs font-medium bg-secondary/80 text-muted-foreground rounded-md border border-border/50 hover:border-primary/30 hover:text-primary transition-colors"
+              className="px-2 sm:px-2.5 py-0.5 sm:py-1 text-[10px] sm:text-xs font-medium bg-secondary/80 text-muted-foreground rounded border border-border/50 hover:border-primary/40 hover:text-primary transition-colors"
             >
               {tag}
             </span>
@@ -101,25 +101,25 @@ const ProjectCard = ({ project, index }: { project: Project; index: number }) =>
         </div>
 
         {/* Links */}
-        <div className="flex items-center gap-5 pt-3 border-t border-border/50">
+        <div className="flex items-center gap-4 sm:gap-5 pt-2 sm:pt-3 border-t border-border/50">
           <a
             href={project.github}
             target="_blank"
             rel="noopener noreferrer"
-            className="flex items-center gap-2 text-muted-foreground hover:text-foreground transition-colors text-sm font-medium group/link"
+            className="flex items-center gap-1.5 sm:gap-2 text-muted-foreground hover:text-foreground transition-colors text-xs sm:text-sm font-medium group/link"
           >
-            <Github size={18} />
+            <Github size={16} className="sm:w-[18px] sm:h-[18px]" />
             <span>Code</span>
           </a>
           <a
             href={project.demo}
             target="_blank"
             rel="noopener noreferrer"
-            className="flex items-center gap-1.5 text-primary hover:text-primary/80 transition-colors text-sm font-medium group/link"
+            className="flex items-center gap-1 sm:gap-1.5 text-primary hover:text-primary/80 transition-colors text-xs sm:text-sm font-medium group/link"
           >
-            <ExternalLink size={18} />
+            <ExternalLink size={16} className="sm:w-[18px] sm:h-[18px]" />
             <span>Live Demo</span>
-            <ArrowUpRight size={14} className="opacity-0 -translate-x-1 group-hover/link:opacity-100 group-hover/link:translate-x-0 transition-all" />
+            <ArrowUpRight size={12} className="sm:w-[14px] sm:h-[14px] opacity-0 -translate-x-1 group-hover/link:opacity-100 group-hover/link:translate-x-0 transition-all" />
           </a>
         </div>
       </div>
@@ -129,21 +129,21 @@ const ProjectCard = ({ project, index }: { project: Project; index: number }) =>
 
 const ProjectsSection = () => {
   return (
-    <section id="projects" className="py-24 relative">
+    <section id="projects" className="py-16 sm:py-20 lg:py-24 relative">
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[600px] bg-mesh pointer-events-none" />
-      
+
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        <div className="text-center mb-14">
+        <div className="text-center mb-10 sm:mb-12 lg:mb-14">
           <p className="section-heading">Portfolio</p>
-          <h2 className="text-3xl md:text-4xl font-display font-bold mb-4">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-display font-bold mb-3 sm:mb-4">
             Featured <span className="gradient-text">Projects</span>
           </h2>
-          <p className="text-muted-foreground max-w-xl mx-auto">
+          <p className="text-sm sm:text-base text-muted-foreground max-w-xl mx-auto px-4">
             Full-stack applications built with modern technologies and best practices.
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-5 lg:gap-6">
           {projects.map((project, index) => (
             <ProjectCard key={project.title} project={project} index={index} />
           ))}
